@@ -79,14 +79,14 @@ The `StravaFileFixer` lambda function modifies the converted `.csv` file, and sa
 
 ### Using lambda to compose an email
 
-When a new `.fit` file is uploaded to the `fixed` folder in the S3 bucket, the `StravaSendEmail` lambda function is triggered. It generates a signed url to the new file, which expires after a period of time. It composes the email and sends it using SES. Step-by-step instructions are here:
+When a new `.fit` file is uploaded to the `fixed` folder in the S3 bucket, the [`StravaSendEmail`](https://github.com/leogargu/StravaSendEmail) lambda function is triggered. It generates a signed url to the new file, which expires after a period of time. It composes the email and sends it using SES. Step-by-step instructions are here:
 
 [https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-python.html](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-python.html)
 
 
 ### Using SES to deliver the email
 
-the email addresses that `StravaSendEmail` will send the email to need to be verified within SES. More information here: [https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html)
+The email addresses that [`StravaSendEmail`](https://github.com/leogargu/StravaSendEmail) will send the email to need to be verified within SES. More information here: [https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html)
 
 ### S3 set up
 
